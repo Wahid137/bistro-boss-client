@@ -1,0 +1,24 @@
+const BistroBanner = () => {
+  return (
+    <div className="bistro-img bg-fixed text-white pt-8 my-20">
+      <div className="md:flex justify-center items-center">
+        <div className="md: ml-10">
+          <p className="uppercase text-3xl">Bistro Boss</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam,
+            earum, saepe explicabo exercitationem veritatis consequuntur
+            architecto delectus dolores alias, quas soluta sequi libero optio ut
+            tenetur velit quisquam eligendi laudantium nihil commodi eius? Odit
+            aspernatur dolores officiis repellat animi dolorum. Eligendi vero
+            consequatur fuga porro reprehenderit nam aliquid, ut neque.
+          </p>
+          <button className="btn text-white btn-outline border-0 border-b-4 mt-5">
+            Order Now
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BistroBanner;
