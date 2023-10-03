@@ -27,11 +27,9 @@ const Navbar = () => {
       </li>
       {user ? (
         <>
-          <li>
-            <button onClick={handleLogOut} className="btn btn-ghost">
-              LogOut
-            </button>
-          </li>
+          <button onClick={handleLogOut} className="btn btn-ghost">
+            LogOut
+          </button>
           <li>
             <span className="flex items-center">{user?.displayName}</span>
           </li>
@@ -40,9 +38,6 @@ const Navbar = () => {
         <>
           <li>
             <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">Sign Up</Link>
           </li>
         </>
       )}

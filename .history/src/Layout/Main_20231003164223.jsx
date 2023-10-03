@@ -12,7 +12,7 @@ const Main = () => {
       {noHeaderFooter || <Navbar />}
       <ScrollRestoration />
       <Outlet />
-      {noHeaderFooter || <Footer />}
+      <Footer />
     </div>
   );
 };
