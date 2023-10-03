@@ -40,11 +40,8 @@ const Navbar = () => {
               {user?.displayName}
             </span>
           </li>
-          <li>
-            <button
-              onClick={handleLogOut}
-              className="btn btn-ghost text-black md:text-white"
-            >
+          <li className="flex items-center">
+            <button onClick={handleLogOut} className="btn btn-ghost ">
               LogOut
             </button>
           </li>

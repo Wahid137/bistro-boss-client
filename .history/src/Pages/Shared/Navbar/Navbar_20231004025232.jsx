@@ -41,10 +41,7 @@ const Navbar = () => {
             </span>
           </li>
           <li>
-            <button
-              onClick={handleLogOut}
-              className="btn btn-ghost text-black md:text-white"
-            >
+            <button onClick={handleLogOut} className="btn btn-ghost ">
               LogOut
             </button>
           </li>

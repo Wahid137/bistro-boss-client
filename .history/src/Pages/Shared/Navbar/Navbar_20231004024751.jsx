@@ -36,17 +36,12 @@ const Navbar = () => {
       {user ? (
         <>
           <li>
-            <span className="flex items-center text-black md:text-white">
-              {user?.displayName}
-            </span>
-          </li>
-          <li>
-            <button
-              onClick={handleLogOut}
-              className="btn btn-ghost text-black md:text-white"
-            >
+            <button onClick={handleLogOut} className="btn btn-ghost">
               LogOut
             </button>
+          </li>
+          <li>
+            <span className="flex items-center">{user?.displayName}</span>
           </li>
         </>
       ) : (

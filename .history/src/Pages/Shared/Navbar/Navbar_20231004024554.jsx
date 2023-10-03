@@ -19,47 +19,32 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/menu" className="text-black md:text-white">
-          Our Menu
-        </Link>
+        <Link to="/menu">Our Menu</Link>
       </li>
       <li>
-        <Link to="/order/salad" className="text-black md:text-white">
-          Order Food
-        </Link>
+        <Link to="/order/salad">Order Food</Link>
       </li>
       <li>
-        <Link to="/secret" className="text-black md:text-white">
-          Secret
-        </Link>
+        <Link to="/secret">Secret</Link>
       </li>
       {user ? (
         <>
           <li>
-            <span className="flex items-center text-black md:text-white">
-              {user?.displayName}
-            </span>
-          </li>
-          <li>
-            <button
-              onClick={handleLogOut}
-              className="btn btn-ghost text-black md:text-white"
-            >
+            <button onClick={handleLogOut} className="btn btn-ghost">
               LogOut
             </button>
+          </li>
+          <li>
+            <span className="flex items-center">{user?.displayName}</span>
           </li>
         </>
       ) : (
         <>
           <li>
-            <Link to="/login" className="text-black md:text-white">
-              Login
-            </Link>
+            <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/signup" className="text-black md:text-white">
-              Sign Up
-            </Link>
+            <Link to="/signup">Sign Up</Link>
           </li>
         </>
       )}

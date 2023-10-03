@@ -29,24 +29,17 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/secret" className="text-black md:text-white">
-          Secret
-        </Link>
+        <Link to="/secret">Secret</Link>
       </li>
       {user ? (
         <>
           <li>
-            <span className="flex items-center text-black md:text-white">
-              {user?.displayName}
-            </span>
-          </li>
-          <li>
-            <button
-              onClick={handleLogOut}
-              className="btn btn-ghost text-black md:text-white"
-            >
+            <button onClick={handleLogOut} className="btn btn-ghost">
               LogOut
             </button>
+          </li>
+          <li>
+            <span className="flex items-center">{user?.displayName}</span>
           </li>
         </>
       ) : (
