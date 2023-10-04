@@ -97,13 +97,9 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-
-          <Link
-            to="/"
-            className="btn btn-ghost normal-case text-xl flex items-center justify-center pb-4"
-          >
-            Bistro Boss
-          </Link>
+          <li>
+            <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
+          </li>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>

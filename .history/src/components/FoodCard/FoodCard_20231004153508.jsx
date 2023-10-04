@@ -13,18 +13,19 @@ const FoodCard = ({ item }) => {
     console.log(item);
     if (user && user.email) {
       const cartItem = {
-        menuItemId: _id,
+        menuItem: _id,
         name,
         image,
         price,
         email: user.email,
       };
+      console.log(cartItem);
       fetch("http://localhost:5000/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(cartItem),
+        body: JSON.stringify({ cartItem }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -32,27 +33,28 @@ const FoodCard = ({ item }) => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Food added on the cart.",
+              title: "Food Added on the Cart",
               showConfirmButton: false,
               timer: 1500,
             });
+          } else {
+            Swal.fire({
+              title: "Login First to order the food!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Login Now!",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate("/login", { state: { from: location } });
+              }
+            });
           }
         });
-    } else {
-      Swal.fire({
-        title: "Please login to order the food",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Login now!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/login", { state: { from: location } });
-        }
-      });
     }
   };
+
   return (
     <div className="card card-compact bg-slate-100 shadow-xl">
       <figure>

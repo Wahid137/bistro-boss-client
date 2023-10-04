@@ -100,7 +100,7 @@ const Navbar = () => {
 
           <Link
             to="/"
-            className="btn btn-ghost normal-case text-xl flex items-center justify-center pb-4"
+            className="btn btn-ghost normal-case text-xl flex items-center justify-center pb-3"
           >
             Bistro Boss
           </Link>

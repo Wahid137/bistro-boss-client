@@ -30,7 +30,7 @@ const FoodCard = ({ item }) => {
         .then((data) => {
           if (data.insertedId) {
             Swal.fire({
-              position: "center",
+              position: "top-end",
               icon: "success",
               title: "Food added on the cart.",
               showConfirmButton: false,

@@ -98,10 +98,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <Link
-            to="/"
-            className="btn btn-ghost normal-case text-xl flex items-center justify-center pb-4"
-          >
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
             Bistro Boss
           </Link>
         </div>
