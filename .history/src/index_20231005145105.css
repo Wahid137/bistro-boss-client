@@ -12,7 +12,6 @@ p{
     
 }
 
-.drawer-side a{
-    background-color: transparent!important;
+.drawer-side a {
+    background-color: red;
 }
- 

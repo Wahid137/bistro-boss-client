@@ -12,7 +12,11 @@ p{
     
 }
 
+.drawer-side a {
+    background-color: red;
+}
+
 .drawer-side a{
-    background-color: transparent!important;
+    background-color: transparent;
 }
  
