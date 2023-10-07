@@ -1,3 +1,4 @@
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useMenu from "../../../hooks/useMenu";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -8,6 +9,7 @@ import ManageItemRow from "./ManageItemRow";
 const ManageItems = () => {
   const [menu, , refetch] = useMenu();
   const [axiosSecure] = useAxiosSecure();
+  const [isOpenModal, setIsModalOpen] = useState(false);
 
   const handleDelete = (item) => {
     Swal.fire({

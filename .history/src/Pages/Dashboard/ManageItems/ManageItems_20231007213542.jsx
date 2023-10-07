@@ -1,12 +1,15 @@
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useMenu from "../../../hooks/useMenu";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { Helmet } from "react-helmet-async";
-import ManageItemRow from "./ManageItemRow";
 
 const ManageItems = () => {
-  const [menu, , refetch] = useMenu();
+  const [menu, loading, refetch] = useMenu();
+  if (loading) {
+    <p>Loading....</p>;
+  }
   const [axiosSecure] = useAxiosSecure();
 
   const handleDelete = (item) => {
@@ -37,29 +40,6 @@ const ManageItems = () => {
         <title>Bistro Boss | Manage Items</title>
       </Helmet>
       <SectionTitle heading="Manage Items" subHeading="Hurry up"></SectionTitle>
-      <div className="overflow-x-auto w-full">
-        <table className="table w-full">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Item</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Update</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          {menu.map((item, i) => (
-            <ManageItemRow
-              i={i}
-              key={item._id}
-              item={item}
-              handleDelete={handleDelete}
-            ></ManageItemRow>
-          ))}
-        </table>
-      </div>
     </div>
   );
 };

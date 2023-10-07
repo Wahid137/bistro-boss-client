@@ -1,13 +1,18 @@
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useMenu from "../../../hooks/useMenu";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { Helmet } from "react-helmet-async";
+import Modal from "../../../components/Modal/Modal";
+import { useState } from "react";
 import ManageItemRow from "./ManageItemRow";
 
 const ManageItems = () => {
   const [menu, , refetch] = useMenu();
   const [axiosSecure] = useAxiosSecure();
+  const [isOpenModal, setIsModalOpen] = useState(false);
+  const [modalInfo, setModalInfo] = useState();
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -50,14 +55,20 @@ const ManageItems = () => {
               <th>Delete</th>
             </tr>
           </thead>
-          {menu.map((item, i) => (
-            <ManageItemRow
-              i={i}
-              key={item._id}
-              item={item}
-              handleDelete={handleDelete}
-            ></ManageItemRow>
-          ))}
+          <tbody>
+            {menu.map((index, item) => (
+              <ManageItemRow
+                key={index}
+                item={item}
+                index={index}
+              ></ManageItemRow>
+            ))}
+            {/* <Modal
+              isOpenModal={isOpenModal}
+              setIsModalOpen={() => setIsModalOpen(!isOpenModal)}
+              //modalInfo={item}
+            /> */}
+          </tbody>
         </table>
       </div>
     </div>

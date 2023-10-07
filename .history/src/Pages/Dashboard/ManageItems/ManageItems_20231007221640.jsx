@@ -1,3 +1,4 @@
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useMenu from "../../../hooks/useMenu";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";

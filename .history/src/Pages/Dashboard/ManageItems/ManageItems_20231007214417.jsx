@@ -1,3 +1,4 @@
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useMenu from "../../../hooks/useMenu";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -7,9 +8,9 @@ import ManageItemRow from "./ManageItemRow";
 
 const ManageItems = () => {
   const [menu, , refetch] = useMenu();
-  const [axiosSecure] = useAxiosSecure();
+  // const [axiosSecure] = useAxiosSecure();
 
-  const handleDelete = (item) => {
+  /*  const handleDelete = (item) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -29,7 +30,7 @@ const ManageItems = () => {
         });
       }
     });
-  };
+  }; */
 
   return (
     <div className="w-full">
@@ -51,12 +52,7 @@ const ManageItems = () => {
             </tr>
           </thead>
           {menu.map((item, i) => (
-            <ManageItemRow
-              i={i}
-              key={item._id}
-              item={item}
-              handleDelete={handleDelete}
-            ></ManageItemRow>
+            <ManageItemRow i={i} key={item._id} item={item}></ManageItemRow>
           ))}
         </table>
       </div>
